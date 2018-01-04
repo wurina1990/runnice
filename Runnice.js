@@ -398,7 +398,8 @@
             array[j].style.background = colorA;
         }
         array[index].style.background = colorB;
-        array[index].parentNode.style.background = colorB;
+        //父节点根据个人结构需要
+        // array[index].parentNode.style.background = colorB;
     };
 
     //实现事件中（如点击事件）某一元素的transform与其他元素不同
