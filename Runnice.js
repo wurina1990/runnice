@@ -419,12 +419,12 @@
     };
 
     //实现3D球面标签云效果 oDivId,aAcn传入时需要传字符串
-    w.threeCloud = function (oDiv,oDivId,aA,aAcname) {
-        //oDiv 为要变动的父元素 oDivId为父元素id aA为要变动的数组 aAcn为变动的子元素classname
+    w.threeCloud = function (oDiv,oDivId,aA,aAcname,color) {
+        //oDiv 为要变动的父元素 oDivId为父元素id aA为要变动的数组 aAcn为变动的子元素classname color为显示字体的颜色
 
         var styleNode = document.createElement("style");
-        styleNode.innerHTML= "#"+oDivId+" {position:relative; width:450px; height:450px; margin: 20px auto 0; }";
-        styleNode.innerHTML+= "#"+oDivId+" ."+aAcname+" {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:black; font-weight:bold; text-decoration:none; padding: 3px 6px; }";
+        styleNode.innerHTML= "#"+oDivId+" {position:relative; width:450px; height:450px; margin: 20px auto 0; display:inline-block}";
+        styleNode.innerHTML+= "#"+oDivId+" ."+aAcname+" {position:absolute; top:0px; left:0px; display:inline-block;font-family: Microsoft YaHei; color:"+color+"; font-weight:bold; text-decoration:none; padding: 3px 6px; }";
         document.head.appendChild(styleNode);
         
 

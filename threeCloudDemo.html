@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="div">
+    <div class="div1">111</div>
+    <div class="div1">222</div>
+    <div class="div1">333</div>
+    <div class="div1">444</div>
+    <div class="div1">555</div>
+    <div class="div1">666</div>
+    <div class="div1">777</div>
+    <div class="div1">888</div>
+    <div class="div1">999</div>
+    <div class="div1">000</div>
+</div>
+
+
+<script src="Runnice.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        var div = document.getElementById('div');//获取父元素
+        var div1 = document.querySelectorAll('.div1');//获取子元素伪数组
+        threeCloud(div,'div',div1,'div1','#600283');
+    }
+
+</script>
+</body>
+</html>
