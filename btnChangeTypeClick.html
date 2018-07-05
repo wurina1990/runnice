@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    
+    <title>button状态样式选择</title>
+    <!--单纯的JS实现的按钮点击状态变化效果 未添加到runnice-->
+    
+    <style type="text/css">
+        /** 添加样式 **/
+        .button{
+            width: 100px;
+            height: 50px;
+            background-color: #e5e5e5;
+            border: 1px solid black;
+        }
+    
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            <span>状态</span>
+        </div>
+        <div onclick="statusRadio(event)">
+            <button class="button" id="allBtn">
+                全部
+            </button>
+           
+            <button class="button" id="backBtn">
+                退回
+            </button>
+            <button class="button" id="readBtn">
+                已读
+            </button>
+            <button class="button" id="unreadBtn">
+                未读
+            </button>
+            <button class="button" id="pauseBtn">
+                暂存
+            </button>
+        </div>
+        
+        <div>
+            <span>类型</span>
+        </div>
+        <div onclick="typeRadio(event)">
+            <button class="button" id="typeAllBtn">
+                全部
+            </button>
+           
+            <button class="button" id="typeFinanceBtn">
+                财务
+            </button>
+            <button class="button" id="typeHRBtn">
+                人事
+            </button>
+            <button class="button" id="typeBuyBtn">
+                采购
+            </button>
+            <button class="button" id="typeOtherBtn">
+                其它
+            </button>
+        </div>
+    
+    </div>
+</div>
+<script type="text/javascript">
+  
+    //管理buttonID
+    var statusBtn = ["allBtn", "pauseBtn", "backBtn", "readBtn", "unreadBtn"];
+    var typeBtn = ["typeAllBtn","typeBuyBtn","typeFinanceBtn","typeHRBtn","typeOtherBtn"];
+    //status按钮点击事件
+    var statusRadio = function (event) {
+        var activeBtn = event.target.id;
+        if (!activeBtn) return;
+        var activeStatusBtn = activeBtn;
+        checkActiveBtn(activeStatusBtn,statusBtn);
+    }
+    //type按钮点击事件
+    var typeRadio = function (event) {
+        var activeBtn = event.target.id;
+        if (!activeBtn) return;
+        var activeTypeBtn = activeBtn;
+        checkActiveBtn(activeTypeBtn, typeBtn);
+    }
+
+    //刷新页面button的样式
+    function checkActiveBtn(activeBtn,btnArr) {
+        btnArr.forEach(function (e) {
+            var btnDom = document.getElementById(e);
+            btnDom.style.backgroundColor = (e == activeBtn) ? "#c5f5e9" : "#e5e5e5";
+            btnDom.style.color = (e == activeBtn) ? "#01a65a" : "#999";
+        })
+    }
+    
+</script>
+</body>
+</html>
